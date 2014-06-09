@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'JDKaLa' target in the 'JDKaLa' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#define IOS7_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ?YES:NO)
+
+#define IOS7(view) ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0? [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y + 20, view.frame.size.width, view.frame.size.height)]:NO)
+
+#define IOS7_STATEBAR ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ?[self setNeedsStatusBarAppearanceUpdate]:[[UIApplication sharedApplication] setStatusBarHidden:NO])
+
+#define BUILD_VERSION @"Build_20131126"
+
+#endif
